@@ -109,7 +109,7 @@ function start()
 	}
 	print(mouseDist);
 
-	if(score == 1)
+	if(score == 20)
 	{
 		startBool = false;
 		winBool = true;
