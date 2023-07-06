@@ -125,7 +125,9 @@ function keyPressed()
 		startBool = true;
 		winBool = false;
 
-		score=0;
+		score = 0;
+		xSpeed = 2;
+		ySpeed = 2;
 	}
 }
 
