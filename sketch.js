@@ -49,12 +49,12 @@ function draw()
   noStroke()
   //fill(255,244,51)
   fill(value)
-  triangle(100,100, 200,450,75,450)
+  triangle(130,100, 235,500, 50,450)
   
    //rectangle in the middle
   fill(100, 200,0);
   noStroke()
-  rect(0,450,windowWidth,300);
+  rect(0,450,windowWidth,windowHeight);
   
   stroke(50)
   fill(220)
@@ -68,7 +68,7 @@ function draw()
   
   print(mouseX, mouseY)
 
-  image(etower, -500, -400);
+  image(etower, -100, 50, 450, 450);
   // Display at full opacity
   //let dx = mouseX - etower.width / 2 - offset;
   //offset += dx * easing;
