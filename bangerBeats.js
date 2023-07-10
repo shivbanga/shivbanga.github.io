@@ -47,7 +47,6 @@ function draw()
 		start();
 	}
 
-	background(0)
 	// level = amplitude.getLevel()
 	// let size = map(level, 0, .6, 10, 900)
 	// ellipse(width/2, height/2, size, size)
@@ -66,6 +65,7 @@ function homeScreen()
 
 function start()
 {
+	background(0)
 		
 	playButton = createButton('glass');
 	playButton.position(300,400)
