@@ -6,10 +6,10 @@ let table;
 let cut;
 let sound;
 
-let modem;
+// let modem;
 
-let amplitude;
-let level;
+// let amplitude;
+// let level;
 
 let startBool = false;
 let homeBool = true;
