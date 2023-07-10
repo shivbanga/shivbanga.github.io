@@ -14,10 +14,10 @@ let level;
 let startBool = false;
 let homeBool = true;
 
-function preload()
-{
-	modem = loadSound('ModemSound.mp3')
-}//preload
+// function preload()
+// {
+// 	modem = loadSound('ModemSound.mp3')
+// }//preload
 
 function setup()
 {
