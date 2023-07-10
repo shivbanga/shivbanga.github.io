@@ -6,6 +6,8 @@ let table;
 let cut;
 let sound;
 
+let meldingen = 0;
+
 // let modem;
 
 // let amplitude;
@@ -66,38 +68,53 @@ function homeScreen()
 function start()
 {
 	background(0)
+	alert("YoUrE gAy");
 		
-	playButton = createButton('glass');
-	playButton.position(300,400)
+	playButton = createButton('glass_1');
+	playButton.position(500,200)
 	playButton.style('font-size', '20px');
   	playButton.style('background-color', color(200,255,255));
 
-	playButton = createButton('light');
+	playButton = createButton('light_2');
+	playButton.position(700,200)
+	playButton.style('font-size', '20px');
+  	playButton.style('background-color', color(200,255,255));
+
+	playButton = createButton('table_3');
+	playButton.position(600,200)
+	playButton.style('font-size', '20px');
+  	playButton.style('background-color', color(200,255,255));
+
+	playButton = createButton('cut__4');
+	playButton.position(500,300)
+	playButton.style('font-size', '20px');
+  	playButton.style('background-color', color(200,255,255));
+
+	playButton = createButton('sound 5');
+	playButton.position(700,300)
+	playButton.style('font-size', '20px');
+  	playButton.style('background-color', color(200,255,255));
+
+	playButton = createButton('sound 6');
+	playButton.position(600,300)
+	playButton.style('font-size', '20px');
+  	playButton.style('background-color', color(200,255,255));
+
+	playButton = createButton('sound 7');
 	playButton.position(500,400)
 	playButton.style('font-size', '20px');
   	playButton.style('background-color', color(200,255,255));
 
-
-	playButton = createButton('table');
-	playButton.position(400,400)
+	playButton = createButton('sound 8');
+	playButton.position(700,400)
 	playButton.style('font-size', '20px');
   	playButton.style('background-color', color(200,255,255));
 
-
-	playButton = createButton('cut');
-	playButton.position(300,500)
-	playButton.style('font-size', '20px');
-  	playButton.style('background-color', color(200,255,255));
-
-	playButton = createButton('sound');
-	playButton.position(500,500)
-	playButton.style('font-size', '20px');
-  	playButton.style('background-color', color(200,255,255));
-
-	playButton = createButton('sound');
-	playButton.position(400,500)
+	playButton = createButton('sound 9');
+	playButton.position(600,400)
 	playButton.style('font-size', '20px');
   	playButton.style('background-color', color(200,255,255));
 
 }
+
 
