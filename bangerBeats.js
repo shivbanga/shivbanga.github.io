@@ -68,8 +68,7 @@ function homeScreen()
 function start()
 {
 	background(0)
-	alert("YoUrE gAy");
-		
+			
 	playButton = createButton('glass_1');
 	playButton.position(500,200)
 	playButton.style('font-size', '20px');
