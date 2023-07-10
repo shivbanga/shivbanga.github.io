@@ -58,9 +58,9 @@ function homeScreen()
 	background(200, 30, 100);
 	fill(255);
 	textSize(40);
-	text("Welcome to Banger Beats", windowWidth/2, 50)
+	text("Welcome to Banger Beats", windowWidth/3, 50)
 	textSize(20)
-	text("press mouse pad to continue", windowWidth/2, 100)
+	text("press mouse pad to continue", windowWidth/2.5,100)
 }
 
 function start()
