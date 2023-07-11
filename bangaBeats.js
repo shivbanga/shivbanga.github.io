@@ -31,7 +31,6 @@ function setup()
 		homeScreen();
 	}
 
-
 }//setup
 
 function draw()
@@ -72,7 +71,7 @@ function start()
 	playButton.position(550,200)
 	playButton.style('font-size', '20px');
   	playButton.style('background-color', color(200,255,255));
-  	playButton.mouseClicked(glass.play());
+ 	playButton.mousePressed(glass.play(1));
 
 	// playButton = createButton('light_2');
 	// playButton.position(750,200)
@@ -130,3 +129,4 @@ function start()
 }
 
 
+//}//playGlass
