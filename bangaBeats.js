@@ -21,6 +21,14 @@ let startBool = false;
 let homeBool = true;
 
 let checkboxTable;
+let checkboxRing;
+let checkboxBark;
+let checkboxHonk;
+let checkboxClick;
+let checkboxHihat;
+let checkboxChime;
+let checkboxCoke;
+let checkboxGlass;
 
 let glassplayButton;
 let tableplayButton;
@@ -55,6 +63,7 @@ function setup()
 	{
 		homeScreen();
 	}
+//buttons
 
 	glassPlayButton = createButton('Glass_1_');
 	glassPlayButton.position(550,200)
@@ -119,19 +128,54 @@ function setup()
  	hihatPlayButton.mousePressed(playHihat);
  	hihatPlayButton.hide()
 
-  	// checkboxTable = createCheckbox('Loop', false);
-  	// checkboxTable.position(660,245)
-  	// checkboxTable.changed(playTableLoop)
-  	// checkboxTable.hide()
+//checkboxes
 
-  	// checkboxClick = createCheckbox('Loop', false);
-  	// checkboxClick.position(760,245)
-  	// checkboxClick.changed(playClickLoop)
-  	// checkboxClick.hide()
+  	checkboxTable = createCheckbox('Loop', false);
+  	checkboxTable.position(660,245)
+  	checkboxTable.changed(playTableLoop)
+  	checkboxTable.hide()
 
+  	checkboxClick = createCheckbox('Loop', false);
+  	checkboxClick.position(760,245)
+  	checkboxClick.changed(playClickLoop)
+  	checkboxClick.hide()
 
+  	checkboxGlass = createCheckbox('Loop', false);
+  	checkboxGlass.position(560,245)
+  	checkboxGlass.changed(playGlassLoop)
+  	checkboxGlass.hide()
 
+  	checkboxBark = createCheckbox('Loop', false);
+  	checkboxBark.position(560,345)
+  	checkboxBark.changed(playBarkLoop)
+  	checkboxBark.hide()
+
+  	checkboxCoke = createCheckbox('Loop', false);
+  	checkboxCoke.position(560,445)
+  	checkboxCoke.changed(playCokeLoop)
+  	checkboxCoke.hide()
+
+  	checkboxRing = createCheckbox('Loop', false);
+  	checkboxRing.position(760,345)
+  	checkboxRing.changed(playRingLoop)
+  	checkboxRing.hide()
+
+  	checkboxHihat = createCheckbox('Loop', false);
+  	checkboxHihat.position(760,445)
+  	checkboxHihat.changed(playHihatLoop)
+  	checkboxHihat.hide()
 	
+	checkboxChime = createCheckbox('Loop', false);
+  	checkboxChime.position(660,445)
+  	checkboxChime.changed(playChimeLoop)
+  	checkboxChime.hide()
+
+  	checkboxHonk = createCheckbox('Loop', false);
+  	checkboxHonk.position(660,345)
+  	checkboxHonk.changed(playHonkLoop)
+  	checkboxHonk.hide()
+
+
 }//setup
 
 function draw()
@@ -171,7 +215,7 @@ function homeScreen()
 
 function start()
 {
-	background(50)
+	background(75)
 
 	clickPlayButton.show()
 	tablePlayButton.show()
@@ -184,69 +228,184 @@ function start()
 	hihatPlayButton.show()
 	checkboxTable.show()
 	checkboxClick.show()
+	checkboxGlass.show()
+	checkboxCoke.show()
+	checkboxHihat.show()
+	checkboxRing.show()
+	checkboxBark.show()
+	checkboxChime.show()
+	checkboxHonk.show()
+
 
 
 }
 
 function playGlass()
 {
+	glass.stop()
 	glass.play()
+}
+function playGlassLoop()
+{
+
+	if(checkboxGlass.checked()){
+			glass.loop()
+	}
+
+	if(!checkboxGlass.checked()){
+			glass.stop()
+			glass.setLoop(false)
+	}
+	
 }
 
 function playTable()
+{	
+		table.stop();
+		table.play();
+}
+function playTableLoop()
 {
-	table.play()
+
+	if(checkboxTable.checked()){
+			table.loop()
+	}
+
+	if(!checkboxTable.checked()){
+			table.stop()
+			table.setLoop(false)
+	}
 	
 }
-// function playTableLoop()
-// {
-
-// 	if(checkboxTable.checked()){
-// 		table.loop()
-// 	}else{
-// 		table.stop()
-// 	}
-// }
 
 function playClick()
 {
+		click.stop();
 		click.play()
 }
 
-// function playClickLoop()
-// {
-// 	click.play()
+function playClickLoop()
+{
 
-// 	if(checkboxClick.checked()){
-// 		click.loop()
-// 	}else{
-// 		click.stop()
-// 	}
-// }
+	if(checkboxClick.checked()){
+			click.loop()
+	}
+
+	if(!checkboxClick.checked()){
+			click.stop()
+			click.setLoop(false)
+	}
+	
+}
 
 function playBark()
 {
-		bark.play()
+	bark.stop();
+	bark.play()
 }
+function playBarkLoop()
+{
+
+	if(checkboxBark.checked()){
+			bark.loop()
+	}
+
+	if(!checkboxBark.checked()){
+			bark.stop()
+			bark.setLoop(false)
+	}
+	
+}
+
 function playHonk()
 {
-		honk.play()
+	honk.stop()
+	honk.play()
+}
+function playHonkLoop()
+{
+
+	if(checkboxHonk.checked()){
+			honk.loop()
+	}
+
+	if(!checkboHonk.checked()){
+			honk.stop()
+			honk.setLoop(false)
+	}
+	
 }
 function playRing()
 {
-		ring.play()
+	ring.stop()
+	ring.play()
+}
+function playRingLoop()
+{
+
+	if(checkboxRing.checked()){
+			ring.loop()
+	}
+
+	if(!checkboxRing.checked()){
+			ring.stop()
+			ring.setLoop(false)
+	}
+	
 }
 function playCoke()
 {
-		coke.play()
+	coke.stop();
+	coke.play()
+}
+function playCokeLoop()
+{
+
+	if(checkboxCoke.checked()){
+			coke.loop()
+	}
+
+	if(!checkboxCoke.checked()){
+			coke.stop()
+			coke.setLoop(false)
+	}
+	
 }
 function playChime()
 {
-		chime.play()
+	chime.stop();
+	chime.play()
+}
+function playChimeLoop()
+{
+
+	if(checkboxChime.checked()){
+			chime.loop()
+	}
+
+	if(!checkboxChime.checked()){
+			chime.stop()
+			chime.setLoop(false)
+	}
+	
 }
 function playHihat()
 {
-		hihat.play()
+	hihat.stop();
+	hihat.play()
+}
+function playHihatLoop()
+{
+
+	if(checkboxHihat.checked()){
+			hihat.loop()
+	}
+
+	if(!checkboxHihat.checked()){
+			hihat.stop()
+			hihat.setLoop(false)
+	}
+	
 }
 
 function keyPressed()
