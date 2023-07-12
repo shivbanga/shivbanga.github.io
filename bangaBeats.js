@@ -1,10 +1,14 @@
 //Banga Beats
 
 let glass;
-let light;
+let ring;
 let table;
-let cut;
+let bark;
 let click;
+let honk;
+let coke;
+let chime;
+let hihat;
 
 // let modem;
 
@@ -14,11 +18,11 @@ let click;
 let startBool = false;
 let homeBool = true;
 
-let checkboxTable
+let checkboxTable;
 
-let glassplayButton
-let tableplayButton
-let clickplayButton
+let glassplayButton;
+let tableplayButton;
+let clickplayButton;
 
 function preload()
 {
@@ -27,6 +31,12 @@ function preload()
 	glass = loadSound('glass.m4a')
 	table = loadSound('table.m4a')
 	click = loadSound('click.m4a')
+	bark = loadSound('bark.m4a')
+	ring = loadSound('ring.m4a')
+	honk = loadSound('honk.mp3')
+	coke = loadSound('coke.mp3')
+	chime = loadSound('chime.mp3')
+	hihat = loadSound('hihat.mp3')
 
 }//preload
 
@@ -42,37 +52,82 @@ function setup()
 		homeScreen();
 	}
 
-	glassplayButton = createButton('glass_1');
-	glassplayButton.position(550,200)
-	glassplayButton.style('font-size', '20px');
-  	glassplayButton.style('background-color', color(200,255,255));
- 	glassplayButton.mousePressed(playGlass);
+	glassPlayButton = createButton('Glass_1_');
+	glassPlayButton.position(550,200)
+	glassPlayButton.style('font-size', '20px');
+  	glassPlayButton.style('background-color', color(200,255,255));
+ 	glassPlayButton.mousePressed(playGlass);
+ 	glassPlayButton.hide()
 
- 	glassplayButton.hide()
+	tablePlayButton = createButton('Knock 2');
+	tablePlayButton.position(650,200)
+	tablePlayButton.style('font-size', '20px');
+  	tablePlayButton.style('background-color', color(200,255,255));
+ 	tablePlayButton.mousePressed(playTable);
+ 	tablePlayButton.hide()
 
-	tableplayButton = createButton('table_2');
-	tableplayButton.position(650,200)
-	tableplayButton.style('font-size', '20px');
-  	tableplayButton.style('background-color', color(200,255,255));
- 	tableplayButton.mousePressed(playTable);
- 	tableplayButton.hide()
+	clickPlayButton = createButton('Click_3_');
+	clickPlayButton.position(750,200)
+	clickPlayButton.style('font-size', '20px');
+  	clickPlayButton.style('background-color', color(200,255,255));
+  	clickPlayButton.mousePressed(playClick);
+  	clickPlayButton.hide()
 
-	clickplayButton = createButton('click_3');
-	clickplayButton.position(750,200)
-	clickplayButton.style('font-size', '20px');
-  	clickplayButton.style('background-color', color(200,255,255));
-  	clickplayButton.mousePressed(playClick);
-  	clickplayButton.hide()
+	barkPlayButton = createButton('Bark_4_');
+	barkPlayButton.position(550,300)
+	barkPlayButton.style('font-size', '20px');
+  	barkPlayButton.style('background-color', color(200,255,255));
+ 	barkPlayButton.mousePressed(playBark);
+ 	barkPlayButton.hide()
 
-  	checkboxTable = createCheckbox('Loop', false);
-  	checkboxTable.position(660,245)
-  	checkboxTable.changed(playTableLoop)
-  	checkboxTable.hide()
+ 	honkPlayButton = createButton('Honk_5');
+	honkPlayButton.position(650,300)
+	honkPlayButton.style('font-size', '20px');
+  	honkPlayButton.style('background-color', color(200,255,255));
+ 	honkPlayButton.mousePressed(playHonk);
+ 	honkPlayButton.hide()
 
-  	checkboxClick = createCheckbox('Loop', false);
-  	checkboxClick.position(760,245)
-  	checkboxClick.changed(playClickLoop)
-  	checkboxClick.hide()
+	ringPlayButton = createButton('Ring_6_');
+	ringPlayButton.position(750,300)
+	ringPlayButton.style('font-size', '20px');
+  	ringPlayButton.style('background-color', color(200,255,255));
+ 	ringPlayButton.mousePressed(playRing);
+ 	ringPlayButton.hide()
+
+	cokePlayButton = createButton('Coke_7_');
+	cokePlayButton.position(550,400)
+	cokePlayButton.style('font-size', '20px');
+  	cokePlayButton.style('background-color', color(200,255,255));
+ 	cokePlayButton.mousePressed(playCoke);
+ 	cokePlayButton.hide()
+
+	chimePlayButton = createButton('Chime 8');
+	chimePlayButton.position(650,400)
+	chimePlayButton.style('font-size', '20px');
+  	chimePlayButton.style('background-color', color(200,255,255));
+ 	chimePlayButton.mousePressed(playChime);
+ 	chimePlayButton.hide()
+
+	hihatPlayButton = createButton('Hi-Hat 9');
+	hihatPlayButton.position(750,400)
+	hihatPlayButton.style('font-size', '20px');
+  	hihatPlayButton.style('background-color', color(200,255,255));
+ 	hihatPlayButton.mousePressed(playHihat);
+ 	hihatPlayButton.hide()
+
+  	// checkboxTable = createCheckbox('Loop', false);
+  	// checkboxTable.position(660,245)
+  	// checkboxTable.changed(playTableLoop)
+  	// checkboxTable.hide()
+
+  	// checkboxClick = createCheckbox('Loop', false);
+  	// checkboxClick.position(760,245)
+  	// checkboxClick.changed(playClickLoop)
+  	// checkboxClick.hide()
+
+
+
+	
 }//setup
 
 function draw()
@@ -110,50 +165,17 @@ function start()
 {
 	background(50)
 
-	clickplayButton.show()
-	tableplayButton.show()
-	glassplayButton.show()
+	clickPlayButton.show()
+	tablePlayButton.show()
+	glassPlayButton.show()
+	barkPlayButton.show()
+	honkPlayButton.show()
+	ringPlayButton.show()
+	cokePlayButton.show()
+	chimePlayButton.show()
+	hihatPlayButton.show()
 	checkboxTable.show()
 	checkboxClick.show()
-
-
-	// playButton = createButton('cut__4');
-	// playButton.position(550,300)
-	// playButton.style('font-size', '20px');
-  	// playButton.style('background-color', color(200,255,255));
- 	// playButton.mousePressed(playGlass);
-
-	// playButton = createButton('sound 5');
-	// playButton.position(750,300)
-	// playButton.style('font-size', '20px');
-  	// playButton.style('background-color', color(200,255,255));
- 	// playButton.mousePressed(playGlass);
-
-	// playButton = createButton('sound 6');
-	// playButton.position(650,300)
-	// playButton.style('font-size', '20px');
-  	// playButton.style('background-color', color(200,255,255));
- 	// playButton.mousePressed(playGlass);
-
-	// playButton = createButton('sound 7');
-	// playButton.position(550,400)
-	// playButton.style('font-size', '20px');
-  	// playButton.style('background-color', color(200,255,255));
- 	// playButton.mousePressed(playGlass);
-
-	// playButton = createButton('sound 8');
-	// playButton.position(750,400)
-	// playButton.style('font-size', '20px');
-  	// playButton.style('background-color', color(200,255,255));
- 	// playButton.mousePressed(playGlass);
-
-	// playButton = createButton('sound 9');
-	// playButton.position(650,400)
-	// playButton.style('font-size', '20px');
-  	// playButton.style('background-color', color(200,255,255));
- 	// playButton.mousePressed(playGlass);
-
-
 
 
 }
@@ -166,59 +188,58 @@ function playGlass()
 function playTable()
 {
 	table.play()
-
 	
 }
-function playTableLoop()
-{
+// function playTableLoop()
+// {
 
-	if(checkboxTable.checked()){
-		table.loop()
-	}else{
-		table.stop()
-	}
-}
+// 	if(checkboxTable.checked()){
+// 		table.loop()
+// 	}else{
+// 		table.stop()
+// 	}
+// }
 
 function playClick()
 {
 		click.play()
 }
 
-function playClickLoop()
+// function playClickLoop()
+// {
+// 	click.play()
+
+// 	if(checkboxClick.checked()){
+// 		click.loop()
+// 	}else{
+// 		click.stop()
+// 	}
+// }
+
+function playBark()
 {
-	click.play()
-
-	if(checkboxClick.checked()){
-		click.loop()
-	}else{
-		click.stop()
-	}
+		bark.play()
 }
-
-// function playGlass()
-// {
-// 		glass.play()
-// }
-// function playGlass()
-// {
-// 		glass.play()
-// }
-// function playGlass()
-// {
-// 		glass.play()
-// }
-// function playGlass()
-// {
-// 		glass.play()
-// }
-// function playGlass()
-// {
-// 		glass.play()
-// }
-// function playGlass()
-// {
-// 		glass.play()
-// }
+function playHonk()
+{
+		honk.play()
+}
+function playRing()
+{
+		ring.play()
+}
+function playCoke()
+{
+		coke.play()
+}
+function playChime()
+{
+		chime.play()
+}
+function playHihat()
+{
+		hihat.play()
+}
 
 function keyPressed()
 {
@@ -234,5 +255,36 @@ function keyPressed()
 	{
 		click.play()
 	}
+
+	if(key == '4')
+	{
+		bark.play()
+	}
+
+	if(key == '5')
+	{
+		honk.play()
+	}
+
+	if(key == '6')
+	{
+		ring.play()
+	}
+
+	if(key == '7')
+	{
+		coke.play()
+	}
+
+	if(key == '8')
+	{
+		chime.play()
+	}
+
+	if(key == '9')
+	{
+		hihat.play()
+	}
+
 }
 
