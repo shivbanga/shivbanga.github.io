@@ -329,7 +329,7 @@ function playHonkLoop()
 			honk.loop()
 	}
 
-	if(!checkboHonk.checked()){
+	if(!checkboxHonk.checked()){
 			honk.stop()
 			honk.setLoop(false)
 	}
