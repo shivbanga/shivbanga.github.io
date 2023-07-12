@@ -10,6 +10,8 @@ let coke;
 let chime;
 let hihat;
 
+let lightning;
+
 // let modem;
 
 // let amplitude;
@@ -27,6 +29,8 @@ let clickplayButton;
 function preload()
 {
 	airStrike = loadFont('airstrike.ttf')
+
+	lightning = loadImage('lightning.png');
 
 	glass = loadSound('glass.m4a')
 	table = loadSound('table.m4a')
@@ -156,10 +160,14 @@ function homeScreen()
 	fill(255);
 	textFont(airStrike);
 	textSize(40);
-	text("Welcome to Banga Beats", 500, 50)
+	text("Welcome to Banga Beats", 435, 300)
 	textSize(20)
-	text("press mouse pad to continue", 600,100)
-}
+	text("press mouse pad to continue", 550,350)
+
+	image(lightning, 30, 20, 400, 500);	
+	image(lightning, 975, 250, 400, 500);	
+
+}//home screen
 
 function start()
 {
