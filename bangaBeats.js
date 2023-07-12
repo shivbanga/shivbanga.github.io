@@ -27,6 +27,7 @@ function preload()
 	glass = loadSound('glass.m4a')
 	table = loadSound('table.m4a')
 	click = loadSound('click.m4a')
+
 }//preload
 
 function setup()
@@ -64,9 +65,14 @@ function setup()
   	clickplayButton.hide()
 
   	checkboxTable = createCheckbox('Loop', false);
-  	checkboxTable.position(560,245)
+  	checkboxTable.position(660,245)
   	checkboxTable.changed(playTableLoop)
   	checkboxTable.hide()
+
+  	checkboxClick = createCheckbox('Loop', false);
+  	checkboxClick.position(760,245)
+  	checkboxClick.changed(playClickLoop)
+  	checkboxClick.hide()
 }//setup
 
 function draw()
@@ -108,6 +114,8 @@ function start()
 	tableplayButton.show()
 	glassplayButton.show()
 	checkboxTable.show()
+	checkboxClick.show()
+
 
 	// playButton = createButton('cut__4');
 	// playButton.position(550,300)
@@ -147,8 +155,6 @@ function start()
 
 
 
-  	
- 	//checkboxTable.changed(playTable);
 
 }
 
@@ -166,7 +172,6 @@ function playTable()
 function playTableLoop()
 {
 
-
 	if(checkboxTable.checked()){
 		table.loop()
 	}else{
@@ -176,8 +181,20 @@ function playTableLoop()
 
 function playClick()
 {
-	click.play()
+		click.play()
 }
+
+function playClickLoop()
+{
+	click.play()
+
+	if(checkboxClick.checked()){
+		click.loop()
+	}else{
+		click.stop()
+	}
+}
+
 // function playGlass()
 // {
 // 		glass.play()
