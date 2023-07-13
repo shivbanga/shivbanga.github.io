@@ -10,6 +10,10 @@ let coke;
 let chime;
 let hihat;
 
+let x = 0;
+let w;
+let h;
+
 let lightning;
 
 // let modem;
@@ -63,6 +67,8 @@ function setup()
 	{
 		homeScreen();
 	}
+
+
 //buttons
 
 	glassPlayButton = createButton('Glass_1_');
@@ -195,6 +201,7 @@ function draw()
 	// level = amplitude.getLevel()
 	// let size = map(level, 0, .6, 10, 900)
 	// ellipse(width/2, height/2, size, size)
+
 }//draw
 
 
@@ -236,6 +243,12 @@ function start()
 	checkboxChime.show()
 	checkboxHonk.show()
 
+
+	//createCanvas(800,240)
+	capture = createCapture(VIDEO);
+	capture.size(320,240);
+	capture.position(1145, 0)
+	
 
 
 }
