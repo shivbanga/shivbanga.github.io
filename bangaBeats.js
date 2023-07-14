@@ -16,13 +16,30 @@ let h;
 
 let lightning;
 
-// let modem;
+let glasspic;
+let doorpic;
+let clickPic;
+let barkPic; 
+let carPic;
+let cokePic;
+let ringPic;
+let chimePic;
+let hihatPic;
 
-// let amplitude;
-// let level;
+let size1;
 
 let startBool = false;
 let homeBool = true;
+
+let glassPicBool = false;
+let ringPicBool = false;
+let tablePicBool = false;
+let barkPicBool = false;
+let clickPicBool = false;
+let carPicBool = false;
+let cokePicBool = false;
+let chimePicBool = false;
+let hihatPicBool = false;
 
 let checkboxTable;
 let checkboxRing;
@@ -42,7 +59,17 @@ function preload()
 {
 	airStrike = loadFont('airstrike.ttf')
 
-	lightning = loadImage('lightning.png');
+	lightning = loadImage('lightning.png')
+
+	glasspic = loadImage('glasspic.png')
+	doorpic = loadImage('doorpic.png')
+	clickPic = loadImage('clickPic.png')
+	barkPic = loadImage('barkPic.png')
+	carPic = loadImage('carPic.png')
+	chimePic = loadImage('chimePic.png')
+	cokePic = loadImage('cokePic.png')
+	ringPic = loadImage('ringPic.png')
+	hihatPic = loadImage('hihatPic.png')
 
 	glass = loadSound('glass.m4a')
 	table = loadSound('table.m4a')
@@ -77,6 +104,7 @@ function setup()
   	glassPlayButton.style('background-color', color(200,255,255));
  	glassPlayButton.mousePressed(playGlass);
  	glassPlayButton.hide()
+
 
 	tablePlayButton = createButton('Knock 2');
 	tablePlayButton.position(650,200)
@@ -176,10 +204,12 @@ function setup()
   	checkboxChime.changed(playChimeLoop)
   	checkboxChime.hide()
 
-  	checkboxHonk = createCheckbox('Loop', false);
+	checkboxHonk = createCheckbox('Loop', false);
   	checkboxHonk.position(660,345)
   	checkboxHonk.changed(playHonkLoop)
   	checkboxHonk.hide()
+
+  	amplitude = new p5.Amplitude()
 
 
 }//setup
@@ -198,9 +228,50 @@ function draw()
 		start();
 	}
 
-	// level = amplitude.getLevel()
-	// let size = map(level, 0, .6, 10, 900)
-	// ellipse(width/2, height/2, size, size)
+	if(glassPicBool == true)
+	{
+		image(glasspic, 15, 250, 200, 200)
+	}
+
+	if(tablePicBool == true)
+	{
+		image(doorpic, 15, 250, 200, 300)
+	}
+
+	if(barkPicBool == true)
+	{
+		image(barkPic, 15, 250, 250, 200)
+	}
+
+	if(clickPicBool == true)
+	{
+		image(clickPic, 15, 250, 350, 200)
+	}
+
+	if(ringPicBool == true)
+	{
+		image(ringPic, 15, 250, 200, 200)
+	}
+
+	if(cokePicBool == true)
+	{
+		image(cokePic, 15, 250, 200, 350)
+	}
+
+	if(carPicBool == true)
+	{
+		image(carPic, 15, 250, 350, 200)
+	}
+
+	if(chimePicBool == true)
+	{
+		image(chimePic, 15, 250, 200, 350)
+	}
+
+	if(hihatPicBool == true)
+	{
+		image(hihatPic, 15, 250, 350, 350)
+	}
 
 }//draw
 
@@ -245,10 +316,18 @@ function start()
 
 
 	//createCanvas(800,240)
-	capture = createCapture(VIDEO);
-	capture.size(320,240);
-	capture.position(1145, 0)
-	
+	// capture = createCapture(VIDEO);
+	// capture.size(320,240);
+	// capture.position(1145, 0)
+
+	level = amplitude.getLevel()
+	let size = map(level, 0, .6, 10, 900)
+	ellipse(400, 320, size, size)
+
+	level1 = amplitude.getLevel()
+	let size1 = map(level, 0, .6, 10, 900)
+	ellipse(975, 320, size1, size1)
+
 
 
 }
@@ -258,16 +337,19 @@ function playGlass()
 	glass.stop()
 	glass.play()
 }
+
 function playGlassLoop()
 {
 
 	if(checkboxGlass.checked()){
 			glass.loop()
+			glassPicBool = true;
 	}
 
 	if(!checkboxGlass.checked()){
 			glass.stop()
 			glass.setLoop(false)
+			glassPicBool = false;
 	}
 	
 }
@@ -282,11 +364,13 @@ function playTableLoop()
 
 	if(checkboxTable.checked()){
 			table.loop()
+			tablePicBool = true;
 	}
 
 	if(!checkboxTable.checked()){
 			table.stop()
 			table.setLoop(false)
+			tablePicBool = false;
 	}
 	
 }
@@ -294,7 +378,7 @@ function playTableLoop()
 function playClick()
 {
 		click.stop();
-		click.play()
+		click.play();
 }
 
 function playClickLoop()
@@ -302,11 +386,13 @@ function playClickLoop()
 
 	if(checkboxClick.checked()){
 			click.loop()
+			clickPicBool = true;
 	}
 
 	if(!checkboxClick.checked()){
 			click.stop()
 			click.setLoop(false)
+			clickPicBool = false;
 	}
 	
 }
@@ -314,37 +400,41 @@ function playClickLoop()
 function playBark()
 {
 	bark.stop();
-	bark.play()
+	bark.play();
 }
 function playBarkLoop()
 {
 
 	if(checkboxBark.checked()){
 			bark.loop()
+			barkPicBool = true;
 	}
 
 	if(!checkboxBark.checked()){
 			bark.stop()
 			bark.setLoop(false)
+			barkPicBool = false;
 	}
 	
 }
 
 function playHonk()
 {
-	honk.stop()
-	honk.play()
+	honk.stop();
+	honk.play();
 }
 function playHonkLoop()
 {
 
 	if(checkboxHonk.checked()){
 			honk.loop()
+			carPicBool = true;
 	}
 
 	if(!checkboxHonk.checked()){
 			honk.stop()
 			honk.setLoop(false)
+			carPicBool = false;
 	}
 	
 }
@@ -358,11 +448,14 @@ function playRingLoop()
 
 	if(checkboxRing.checked()){
 			ring.loop()
+			ringPicBool = true;
 	}
 
 	if(!checkboxRing.checked()){
 			ring.stop()
 			ring.setLoop(false)
+			ringPicBool = false;
+
 	}
 	
 }
@@ -376,11 +469,13 @@ function playCokeLoop()
 
 	if(checkboxCoke.checked()){
 			coke.loop()
+			cokePicBool = true;
 	}
 
 	if(!checkboxCoke.checked()){
 			coke.stop()
 			coke.setLoop(false)
+			cokePicBool = false;
 	}
 	
 }
@@ -394,11 +489,13 @@ function playChimeLoop()
 
 	if(checkboxChime.checked()){
 			chime.loop()
+			chimePicBool = true;
 	}
 
 	if(!checkboxChime.checked()){
 			chime.stop()
 			chime.setLoop(false)
+			chimePicBool = false;
 	}
 	
 }
@@ -412,11 +509,13 @@ function playHihatLoop()
 
 	if(checkboxHihat.checked()){
 			hihat.loop()
+			hihatPicBool = true;
 	}
 
 	if(!checkboxHihat.checked()){
 			hihat.stop()
 			hihat.setLoop(false)
+			hihatPicBool = false;
 	}
 	
 }
@@ -467,4 +566,3 @@ function keyPressed()
 	}
 
 }
-
