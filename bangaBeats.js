@@ -230,7 +230,7 @@ function draw()
 
 	if(glassPicBool == true)
 	{
-		image(glasspic, 15, 100, 200, 200)
+		image(glasspic, 15, 50, 200, 200)
 	}
 
 	if(tablePicBool == true)
@@ -240,37 +240,37 @@ function draw()
 
 	if(barkPicBool == true)
 	{
-		image(barkPic, 15, 300, 250, 200)
+		image(barkPic, 15, 350, 250, 200)
 	}
 
 	if(clickPicBool == true)
 	{
-		image(clickPic, 15, 400, 350, 200)
+		image(clickPic, 15, 450, 350, 200)
 	}
 
 	if(ringPicBool == true)
 	{
-		image(ringPic, 15, 500, 200, 200)
+		image(ringPic, 15, 550, 200, 200)
 	}
 
 	if(cokePicBool == true)
 	{
-		image(cokePic, 900, 100, 200, 350)
+		image(cokePic, 900, 50, 200, 350)
 	}
 
 	if(carPicBool == true)
 	{
-		image(carPic, 900, 200, 350, 200)
+		image(carPic, 900, 250, 350, 200)
 	}
 
 	if(chimePicBool == true)
 	{
-		image(chimePic, 900, 300, 200, 350)
+		image(chimePic, 900, 400, 200, 350)
 	}
 
 	if(hihatPicBool == true)
 	{
-		image(hihatPic, 900, 400, 350, 350)
+		image(hihatPic, 900, 500, 350, 350)
 	}
 
 }//draw
