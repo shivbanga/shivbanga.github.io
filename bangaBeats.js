@@ -255,7 +255,7 @@ function draw()
 
 	if(cokePicBool == true)
 	{
-		image(cokePic, 900, 50, 200, 350)
+		image(cokePic, 1150, 50, 200, 350)
 	}
 
 	if(carPicBool == true)
